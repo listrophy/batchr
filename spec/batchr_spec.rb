@@ -58,7 +58,7 @@ describe Batchr do
   end
 
   describe '#run_if_necessary' do
-    let(:batchr) { Batchr.new(batch_size: 1) }
+    let(:batchr) { Batchr.new(:batch_size => 1) }
     after { batchr.run_if_necessary }
 
     context 'buffered size is greater than batch_size' do
