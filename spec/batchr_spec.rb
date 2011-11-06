@@ -27,7 +27,7 @@ describe Batchr do
   describe '#initialize' do
     context 'with batch_size opt' do
       it 'sets the batch_size' do
-        Batchr.new(batch_size: 3).batch_size.should == 3
+        Batchr.new(:batch_size => 3).batch_size.should == 3
       end
     end
   end
@@ -87,7 +87,7 @@ describe Batchr do
     let(:batchr) { Batchr.new }
     before do
       batchr.receiver, batchr.message = Receiver, :message
-      batchr.bucket.stub(empty?: empty_bucket)
+      batchr.bucket.stub(:empty? => empty_bucket)
     end
     context 'when bucket has something' do
       let(:empty_bucket) { false }
