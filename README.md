@@ -1,6 +1,8 @@
 Batchr
 ======
 
+[![Build Status](https://secure.travis-ci.org/listrophy/batchr.png)](http://travis-ci.org/listrophy/batchr)
+
 Installation
 ------------
 
