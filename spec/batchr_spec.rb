@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../lib/batchr'
+require File.expand_path('../../lib/batchr', __FILE__)
 
 class Receiver
   def self.message batch
