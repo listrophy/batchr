@@ -17,27 +17,18 @@ Installation
 Usage
 -----
 
-    class Receiver
-      def self.message objects = []
-        # your code do deal with a "batch" of objects
-      end
-      def instance_message objects = []
-        # perhaps send the objects off to a DB
+    class ApiSender
+      def bulk_send objects = []
+        # use some API that allows sending, say, up to 10 objects at once
       end
     end
 
-    Batchr.batch(Receiver, :message) do |batchr|
-      1_000_000.times do
-        batchr << rand(2)
+    Batchr.batch(ApiSender.new, :bulk_send) do |batchr|
+      b.batch_size = 10 # optional; default is 400
+      read_really_really_long_csv_file do |row|
+        batchr << row
       end
     end
-
-    Batchr.batch(Receiver.new, :instance_message) do |b|
-      b.batch_size = 4000 # default is 400
-      5_000.times do # instance_message will be sent once, after 4000 calls
-        b << rand(2)
-      end
-    end # instance_message will be sent once here, too, with the remaining 1000 random numbers
 
 Why?
 ----
