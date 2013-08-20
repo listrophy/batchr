@@ -1,7 +1,0 @@
-# if you're using system, let's use 1.9.2. Otherwise, leave the ruby alone
-[[ `rvm tools identifier` == 'system' ]] && rvm use 1.9.2
-
-# create idkfa gemset if necessary
-(rvm gemset list | grep batchr &> /dev/null) || rvm gemset create batchr
-
-rvm gemset use batchr
