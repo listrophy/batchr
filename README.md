@@ -44,5 +44,5 @@ Want to contribute? Great!
 1. Create a branch (git checkout -b my_feature).
 1. Commit your changes (git commit -am "Added Awesomeness").
 1. Push to the branch (git push origin my_feature).
-1. Create an Issue with a link to your branch.
+1. Create a Pull Request
 1. Enjoy a refreshing beverage of your choice and wait.
